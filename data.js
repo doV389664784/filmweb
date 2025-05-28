@@ -12,7 +12,7 @@ const movies = [
         description: "1986年，韩国京畿道华城郡。一起连环杀人案震惊了整个社会，两名警探展开了艰难的破案之旅。",
         image: "images/杀人回忆.avif",
         genre: ["犯罪", "悬疑", "剧情"],
-        trailer: "https://vt1.doubanio.com/202505281905/2f72d760358caa0aa16867dd820f71bd/view/movie/M/402660079.mp4",
+        trailer: "videos/杀人回忆.mp4",
         panLink: "https://pan.quark.cn/s/f6d99567bee2",
         cast: [
             {

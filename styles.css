@@ -156,16 +156,59 @@ body {
 }
 
 @media (max-width: 768px) {
-    .video-container {
-        margin: 0 auto 1rem;
+    .navbar {
+        padding: 0.5rem 4%;
     }
-    
-    .video-container video {
-        max-height: 300px;
+
+    .logo {
+        font-size: 1.5rem;
+        margin-right: 1rem;
     }
-    
-    .media-section {
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .nav-links li a {
+        font-size: 0.9rem;
+        margin-right: 0.8rem;
+    }
+
+    /* 调整英雄区域在移动端的显示 */
+    .hero-section {
+        height: 60vh;
         padding: 0 1rem;
+    }
+
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    /* 调整内容区域在移动端的显示 */
+    .content {
+        padding: 1rem 2%;
+    }
+
+    .movie-grid,
+    .series-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 1rem;
+    }
+
+    .movie-card img {
+        height: 200px;
+    }
+
+    .movie-card .title {
+        font-size: 0.9rem;
+    }
+
+    .movie-card .year {
+        font-size: 0.8rem;
     }
 }
 
@@ -460,44 +503,312 @@ body {
 /* 响应式调整 */
 @media (max-width: 768px) {
     .movie-rating {
-        flex-direction: column;
-        gap: 15px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
     }
 
     .rating-item {
-        max-width: 100%;
+        flex: 1;
+        min-width: 140px;
+    }
+
+    .rating-score {
+        font-size: 24px;
+    }
+
+    .cast-section {
+        padding: 20px;
+    }
+
+    .cast-list {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 15px;
+    }
+
+    .cast-item img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .cast-name {
+        font-size: 0.9rem;
+    }
+
+    .cast-role {
+        font-size: 0.8rem;
+    }
+
+    .resource-section {
+        padding: 20px;
+    }
+
+    .resource-container {
+        padding: 15px;
     }
 
     .resource-item {
         flex-direction: column;
         align-items: flex-start;
-        gap: 8px;
     }
 
     .resource-label {
-        width: auto;
+        margin-bottom: 5px;
+    }
+
+    .resource-link {
+        font-size: 0.9rem;
+        word-break: break-all;
+    }
+}
+
+/* 添加超小屏幕的适配 */
+@media (max-width: 480px) {
+    .movie-grid,
+    .series-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+    }
+
+    .movie-card img {
+        height: 180px;
+    }
+
+    .content h2 {
+        font-size: 1.4rem;
+        margin: 1.5rem 0 0.8rem;
+    }
+
+    .video-container video {
+        max-height: 200px;
+    }
+}
+
+/* 移动端详情页优化 */
+@media (max-width: 768px) {
+    .movie-detail {
+        padding-top: 70px;
+        padding-bottom: 20px;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+
+    .movie-header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+        margin: 0 10px;
+    }
+
+    .movie-poster {
+        flex: none;
+        width: 100%;
+    }
+
+    .movie-poster img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .movie-info {
+        width: 100%;
+        padding: 0;
+    }
+
+    .movie-title {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        word-wrap: break-word;
+    }
+
+    .movie-meta {
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 15px;
+        font-size: 0.9rem;
+    }
+
+    .movie-meta span {
+        padding-right: 8px;
+        white-space: nowrap;
+    }
+
+    .movie-rating {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: space-between;
+    }
+
+    .rating-item {
+        flex: 0 1 calc(50% - 5px);
+        min-width: auto;
+        max-width: none;
     }
 
     .rating-header {
-        justify-content: center;
+        padding-bottom: 8px;
+        margin-bottom: 8px;
+    }
+
+    .rating-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .rating-title {
+        font-size: 0.9rem;
+    }
+
+    .rating-score {
+        font-size: 1.5rem;
+    }
+
+    .rating-max {
+        font-size: 0.8rem;
+    }
+
+    .movie-description {
+        margin-top: 15px;
+        padding: 15px;
+    }
+
+    .movie-description h2 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .movie-description p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        max-width: 100%;
+    }
+
+    /* 演职员表移动端优化 */
+    .cast-section {
+        margin: 20px 10px;
+        padding: 15px;
+    }
+
+    .cast-section h2 {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
     }
 
     .cast-list {
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-        gap: 20px;
+        grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+        gap: 12px;
+        padding: 10px 0;
     }
 
     .cast-item img {
-        width: 100px;
-        height: 100px;
+        width: 70px;
+        height: 70px;
     }
 
     .cast-name {
-        font-size: 14px;
+        font-size: 0.85rem;
+        margin-top: 5px;
     }
 
     .cast-role {
-        font-size: 12px;
+        font-size: 0.75rem;
+    }
+
+    /* 资源区域移动端优化 */
+    .resource-section {
+        margin: 20px 10px;
+        padding: 15px;
+    }
+
+    .resource-section h2 {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+
+    .resource-container {
+        padding: 12px;
+    }
+
+    .resource-item {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .resource-label {
+        font-size: 0.9rem;
+    }
+
+    .resource-link {
+        font-size: 0.85rem;
+        word-break: break-all;
+        max-width: 100%;
+    }
+
+    /* 预告片区域移动端优化 */
+    .media-section {
+        margin: 20px 10px;
+        padding: 0;
+    }
+
+    .media-section h2 {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+        padding: 0 15px;
+    }
+
+    .video-container {
+        border-radius: 4px;
+    }
+
+    .video-container video {
+        max-height: 200px;
+    }
+}
+
+/* 超小屏幕额外优化 */
+@media (max-width: 480px) {
+    .movie-header {
+        padding: 12px;
+        margin: 0 5px;
+    }
+
+    .movie-poster img {
+        max-width: 250px;
+    }
+
+    .movie-title {
+        font-size: 1.3rem;
+    }
+
+    .movie-meta {
+        font-size: 0.8rem;
+        gap: 5px;
+    }
+
+    .rating-item {
+        padding: 10px;
+    }
+
+    .rating-score {
+        font-size: 1.3rem;
+    }
+
+    .cast-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .resource-section,
+    .cast-section,
+    .media-section {
+        margin: 15px 5px;
     }
 }
 
